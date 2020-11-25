@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_url" id="main_window">
+      <field name="name">open main window</field>
+      <field name="url">/upload/</field>
+      <field name="target">new</field>
+    </record>
+    <menuitem name="odoosharegachigar" id="menu_root" action="main_window"/>
+  </data>
+</odoo>

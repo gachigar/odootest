@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <template id="index">
+      <title>Upload file</title>
+      <form action="/upload_file/" method="post" enctype="multipart/form-data">
+        <label for="attachment">Attachment(s)</label>
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        <input type="file" name="attachment" accept="*" onchange="javascript:this.form.submit();"/>
+      </form>
+      <t t-foreach="files" t-as="f">
+        <t t-esc="f.file_name"/>
+        <a t-attf-href="/web/binary/download_file/{{ f.id }}/{{ f.file_name }}">Download</a>
+        <br/>
+      </t>
+    </template>
+  </data>
+</odoo>
